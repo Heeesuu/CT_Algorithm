@@ -1,40 +1,29 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[] bucket = new int[n+1];
 
-        int[] arr = new int[a];
+        for (int k = 0; k <= n; k++)
+            bucket[k] = k;
 
-        for (int i = 0; i < a; i++) {
-            arr[i] = i+1;
-        }
+        for(int i = 0; i < m; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
 
-        for (int i = 0; i < b; i++) {
-            int c = scanner.nextInt();
-            int d = scanner.nextInt();
-
-            ArrayList<Integer> list = new ArrayList<>();
-
-            for (int j = c-1; j < d; j++) {
-                list.add(arr[j]);
-            }
-
-            int e = 0;
-
-            for (int j = d-1; j >= c-1; j--) {
-                arr[j] = list.get(e);
-                e++;
+            while(a < b){
+                int temp = bucket[b];
+                bucket[b] = bucket[a];
+                bucket[a] = temp;
+                a++;
+                b--;
             }
         }
-
-
-        for (int i = 0; i < a; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        for (int i = 1; i <= n; i++)
+            System.out.print(bucket[i] + " ");
     }
 }
