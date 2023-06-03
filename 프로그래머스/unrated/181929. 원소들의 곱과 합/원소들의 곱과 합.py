@@ -1,14 +1,9 @@
-from functools import reduce
-
 def solution(num_list):
-    # 리스트 원소들의 곱을 계산
-    product = reduce(lambda x, y: x * y, num_list)
-    # 리스트 원소들의 합을 계산
-    sum_of_elements = sum(num_list)
-    # 원소들의 합의 제곱을 계산
-    sum_squared = sum_of_elements ** 2
+    mul = 1
+    for i in num_list:
+        mul *= i
 
-    if product < sum_squared:
+    if mul < sum(num_list) ** 2:
         return 1
-    else:
-        return 0
+
+    return 0
