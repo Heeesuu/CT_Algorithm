@@ -1,34 +1,36 @@
 import sys
+input = sys.stdin.readline
 
-n = int(sys.stdin.readline())
+n = int(input())
 
 stack = []
 
 for i in range(n):
-    command = sys.stdin.readline().strip()
+    a = str(input())
 
-    if("push" in command):
-        _, num = command.split()
-        num = int(num)
-        stack.append(num)
+    if("push" in a):
+        b, c = a.split(" ")
+        c = int(c)
+        stack.append(c)
 
-    elif("top" in command):
-        if not stack:
+    elif("top" in a):
+        if(len(stack) == 0):
             print(-1)
         else:
             print(stack[-1])
         
-    elif("size" in command):
+    elif("size" in a):
         print(len(stack))
     
-    elif("empty" in command):
-        if not stack:
+    elif("empty" in a):
+        if(len(stack) == 0):
             print(1)
         else:
             print(0)
 
-    elif("pop" in command):
-        if not stack:
+    elif("pop" in a):
+        if(len(stack) == 0):
             print(-1)
         else:
-            print(stack.pop())
+            top = stack.pop()
+            print(top)
