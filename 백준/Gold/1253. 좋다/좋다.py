@@ -1,28 +1,30 @@
 import sys
 input = sys.stdin.readline
 
-n = int(input())
-A = list(map(int, input().split()))
-A.sort()
+a = int(input())
 
-count = 0
+num = list(map(int, input().split()))
 
-for i in range(n):
-    start = 0
-    end = n - 1
-    while start < end:
-        if start == i:
-            start += 1
-            continue
-        if end == i:
-            end -= 1
-            continue
-        if A[start] + A[end] == A[i]:
-            count += 1
-            break
-        elif A[start] + A[end] < A[i]:
-            start += 1
+num.sort()
+
+result = 0
+
+for k in range(a):
+    find = num[k]
+    i = 0
+    j = a - 1
+    while i < j:
+        if num[i] + num[j] == find:
+            if i != k and j != k:
+                result += 1
+                break
+            elif i == k:
+                i += 1
+            elif j == k:
+                j -= 1
+        elif num[i] + num[j] < find:
+            i += 1
         else:
-            end -= 1
+            j -= 1
 
-print(count)
+print(result)
