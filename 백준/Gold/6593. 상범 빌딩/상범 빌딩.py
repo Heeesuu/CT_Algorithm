@@ -1,5 +1,6 @@
 import sys
 from collections import deque
+input=sys.stdin.readline
 
 
 # bfs 탐색
@@ -36,7 +37,7 @@ def bfs():
 
 # 반복문을 통해 각 테스트를 확인
 while True:
-    l, r, c = map(int, sys.stdin.readline().split())
+    l, r, c = map(int, input().split())
 
     # L, R, C가 모두 0이면 반복을 멈춘다.
     if l == 0 and r == 0 and c == 0:
@@ -48,8 +49,8 @@ while True:
     # 반복문을 통해 그래프를 나타낸다.
     for i in range(l):
         for _ in range(r):
-            building[i].append(list(map(str, sys.stdin.readline().strip())))
-        sys.stdin.readline()
+            building[i].append(list(map(str, input().strip())))
+        input()
 
     # 반복문을 통해 S와 E의 좌표를 확인한다.
     for i in range(l):
