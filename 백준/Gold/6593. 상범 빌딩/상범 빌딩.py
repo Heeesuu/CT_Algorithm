@@ -26,7 +26,7 @@ def bfs():
             # 범위내에 있고 탐색하지 않았다면 탐색
             if 0 <= nx < c and 0 <= ny < r and 0 <= nz < l and visited[nz][ny][nx] == 0:
                 # 탐색하는 곳이 금이 아니라면 탐색
-                if graph[nz][ny][nx] == "." or graph[nz][ny][nx] == "E":
+                if building[nz][ny][nx] == "." or building[nz][ny][nx] == "E":
                     visited[nz][ny][nx] = visited[z][y][x] + 1
                     queue.append([nz, ny, nx])
 
@@ -42,22 +42,22 @@ while True:
     if l == 0 and r == 0 and c == 0:
         break
 
-    graph = [[] * r for _ in range(l)]
+    building = [[] * r for _ in range(l)]
     visited = [[[0 for _ in range(c)] for _ in range(r)] for _ in range(l)]
 
     # 반복문을 통해 그래프를 나타낸다.
     for i in range(l):
         for _ in range(r):
-            graph[i].append(list(map(str, sys.stdin.readline().strip())))
+            building[i].append(list(map(str, sys.stdin.readline().strip())))
         sys.stdin.readline()
 
     # 반복문을 통해 S와 E의 좌표를 확인한다.
     for i in range(l):
         for j in range(r):
             for k in range(c):
-                if graph[i][j][k] == "S":
+                if building[i][j][k] == "S":
                     sx, sy, sz = k, j, i
-                elif graph[i][j][k] == "E":
+                elif building[i][j][k] == "E":
                     ex, ey, ez = k, j, i
 
     print(bfs())
