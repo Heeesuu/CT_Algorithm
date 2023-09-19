@@ -1,10 +1,10 @@
 # [unrated] 대소문자 바꿔서 출력하기 - 181949 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181949) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181949?language=python3) 
 
 ### 성능 요약
 
-메모리: 69.5 MB, 시간: 158.60 ms
+메모리: 7.17 MB, 시간: 11.27 ms
 
 ### 구분
 
@@ -23,7 +23,7 @@ Empty
 <h5>제한사항</h5>
 
 <ul>
-<li>1 ≤ <code>str</code>의 길이 ≤ 10
+<li>1 ≤ <code>str</code>의 길이 ≤ 20
 
 <ul>
 <li><code>str</code>은 알파벳으로 이루어진 문자열입니다.</li>
@@ -40,5 +40,9 @@ Empty
 <p>출력 #1</p>
 <div class="highlight"><pre class="codehilite"><code>AbCdEfG
 </code></pre></div>
+<hr>
+
+<p>※2023년 05월 03일 제한사항이 수정되었습니다.</p>
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
