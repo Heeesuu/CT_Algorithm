@@ -1,18 +1,18 @@
-import java.util.Scanner;
+import java.util.*;
+import java.lang.*;
 
-public class Main {
-    public static void main(String[] args) {
-        int sum = 0;
+class Main{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        String b = sc.next();
-
-        char[] num = b.toCharArray();
-
-        for (int i = 0; i < num.length; i++){
-          sum += num[i] - '0';
-
+        int n = sc.nextInt();
+        String nNum = sc.next();
+        int sum = 0;
+        
+        char[] charArr = nNum.toCharArray();
+        for(int i=0; i<charArr.length; i++){
+            sum += charArr[i] - '0';
         }
+        
         System.out.println(sum);
     }
 }
