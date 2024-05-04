@@ -1,14 +1,13 @@
-a = int(input())
+N = int(input())
+scores = list(map(int,input().split()))
+scores.sort()
 
-score = list(map(int, input().split()))
+M = scores[-1]
+sum = 0
 
-score.sort()
-answer = 0
+for i in scores:
+    sum += (i / M) * 100
 
-M = score[-1]
-
-for i in score:
-  answer += (i / M) * 100
-
-answer = float(answer / a)
-print(answer)
+sum = float(sum / N)
+print(sum)
+    
