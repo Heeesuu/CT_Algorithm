@@ -1,18 +1,16 @@
 import sys
 input = sys.stdin.readline
 
-a, b = map(int, input().split())
-num = list(map(int, input().split()))
-temp = 0
-sum = 0
-S = [0]
+N, M = map(int, input().split())
+numbers = list(map(int, input().split()))
 
-for i in num:
+S = [0]
+temp = 0
+
+for i in numbers:
     temp = temp + i
     S.append(temp)
 
-
-for i in range(b):
-    c, d = map(int, input().split())
-    sum = S[d] - S[c-1]
-    print(sum)
+for i in range(M):
+    i, j = map(int, input().split())
+    print(S[j] - S[i -1])
