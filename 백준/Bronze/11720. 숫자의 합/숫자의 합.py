@@ -1,5 +1,9 @@
-a = int(input())
-answer = list(map(int, input()))
+a = input()
 
-sumlist = sum(answer)
-print(sumlist)
+numList = list(input())
+answer = 0
+
+for i in numList:
+    answer += int(i)
+    
+print(answer)
