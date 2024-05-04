@@ -1,13 +1,12 @@
 N = int(input())
-scores = list(map(int,input().split()))
-scores.sort()
+scores = list(map(int, input().split()))
 
-M = scores[-1]
+M = max(scores)
 sum = 0
 
 for i in scores:
-    sum += (i / M) * 100
+    sum += (i/M)*100
 
-sum = float(sum / N)
+sum = float(sum/N)
 print(sum)
     
